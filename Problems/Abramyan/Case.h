@@ -351,29 +351,300 @@ void task_13(int n, float value)
 		 << pow(a, 2) / 8;
 }
 
-void task_14()
+void task_14(int n, float value)
 {
-	
+	float a;
+	switch (n)
+	{
+	case 1:
+		a = value;
+		break;
+	case 2:
+		a = 6 * value / sqrt(3);
+		break;
+	case 3:
+		a = 3 * value / sqrt(3);
+		break;
+	case 4:
+		a = sqrt(4 * value / sqrt(3));
+		break;
+	}
+	cout << a << endl
+		 << a * sqrt(3) / 6 << endl
+		 << a * sqrt(3) / 3 << endl
+		 << pow(a, 2) * sqrt(3) / 4;
 }
 
-void task_15()
+void task_15(int n, int m)
 {
+	switch (n)
+	{
+	case 6:
+		cout << "six ";
+		break;
+	case 7:
+		cout << "seven ";
+		break;
+	case 8:
+		cout << "eight ";
+		break;
+	case 9:
+		cout << "nine ";
+		break;
+	case 10:
+		cout << "ten ";
+		break;
+	case 11:
+		cout << "jack ";
+		break;
+	case 12:
+		cout << "queen ";
+		break;
+	case 13:
+		cout << "king ";
+		break;
+	case 14:
+		cout << "ace ";
+		break;
+	}
+	switch (m)
+	{
+	case 1:
+		cout << "spades";
+		break;
+	case 2:
+		cout << "clubs";
+		break;
+	case 3:
+		cout << "diamonds";
+		break;
+	case 4:
+		cout << "hearts";
+		break;
+	}
 }
 
-void task_16()
+void task_16(int age)
 {
+	int first = age / 10;
+	int second = age % 10;
+	switch (first)
+	{
+	case 2:
+		cout << "twenty ";
+		break;
+	case 3:
+		cout << "thirty ";
+		break;
+	case 4:
+		cout << "forty ";
+		break;
+	case 5:
+		cout << "fifty ";
+		break;
+	case 6:
+		cout << "sixty ";
+		break;
+	}
+	switch (second)
+	{
+	case 1:
+		cout << "one";
+		break;
+	case 2:
+		cout << "two";
+		break;
+	case 3:
+		cout << "three";
+		break;
+	case 4:
+		cout << "four";
+		break;
+	case 5:
+		cout << "five";
+		break;
+	case 6:
+		cout << "six";
+		break;
+	case 7:
+		cout << "seven";
+		break;
+	case 8:
+		cout << "eight";
+		break;
+	case 9:
+		cout << "nine";
+		break;
+	}
+	cout << " year";
 }
 
-void task_17()
+void task_17(int num)
 {
+	if (10 < num && num < 20)
+	{
+		switch (num)
+		{
+		case 11:
+			cout << "eleven";
+			break;
+		case 12:
+			cout << "twelve";
+			break;
+		case 13:
+			cout << "thirteen";
+			break;
+		case 14:
+			cout << "fourteen";
+			break;
+		case 15:
+			cout << "fifteen";
+			break;
+		case 16:
+			cout << "sixteen";
+			break;
+		case 17:
+			cout << "seventeen";
+			break;
+		case 18:
+			cout << "eighteen";
+			break;
+		case 19:
+			cout << "nineteen";
+			break;
+		}
+	}
+	else
+	{
+		int first = num / 10;
+		int second = num % 10;
+		switch (first)
+		{
+		case 1:
+			cout << "ten";
+			break;
+		case 2:
+			cout << "twenty";
+			break;
+		case 3:
+			cout << "thirty";
+			break;
+		case 4:
+			cout << "forty";
+			break;
+		}
+		cout << ' ';
+		switch (second)
+		{
+		case 1:
+			cout << "one";
+			break;
+		case 2:
+			cout << "two";
+			break;
+		case 3:
+			cout << "three";
+			break;
+		case 4:
+			cout << "four";
+			break;
+		case 5:
+			cout << "five";
+			break;
+		case 6:
+			cout << "six";
+			break;
+		case 7:
+			cout << "seven";
+			break;
+		case 8:
+			cout << "eight";
+			break;
+		case 9:
+			cout << "nine";
+			break;
+		}
+		cout << " lessons";
+	}
 }
 
-void task_18()
+void task_18_digit(int digit)
 {
+	switch (digit)
+	{
+	case 1:
+		cout << "one";
+		break;
+	case 2:
+		cout << "two";
+		break;
+	case 3:
+		cout << "three";
+		break;
+	case 4:
+		cout << "four";
+		break;
+	case 5:
+		cout << "five";
+		break;
+	case 6:
+		cout << "six";
+		break;
+	case 7:
+		cout << "seven";
+		break;
+	case 8:
+		cout << "eight";
+		break;
+	case 9:
+		cout << "nine";
+		break;
+	}
+}
+void task_18(int num)
+{
+	int first = num / 100;
+	int second = (num / 10) % 10;
+	int third = num % 10;
+	task_18_digit(first);
+	cout << " hundred ";
+	switch (second)
+	{
+	case 1:
+		cout << "ten";
+		break;
+	case 2:
+		cout << "twenty";
+		break;
+	case 3:
+		cout << "thirty";
+		break;
+	case 4:
+		cout << "forty";
+		break;
+	case 5:
+		cout << "fifty";
+		break;
+	case 6:
+		cout << "sixty";
+		break;
+	case 7:
+		cout << "seventy";
+		break;
+	case 8:
+		cout << "eighty";
+		break;
+	case 9:
+		cout << "ninety";
+		break;
+	}
+	cout << ' ';
+	task_18_digit(third);
 }
 
-void task_19()
+void task_19(int year)
 {
+
 }
 
 void task_20()
