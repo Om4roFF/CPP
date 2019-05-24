@@ -644,10 +644,145 @@ void task_18(int num)
 
 void task_19(int year)
 {
-
+	int difference = abs(year - 1984) % 60;
+	int cycle = difference / 12;
+	int animal = difference / 5;
+	// Cycle
+	switch (cycle)
+	{
+	case 0:
+		cout << "green";
+		break;
+	case 1:
+		cout << "red";
+		break;
+	case 2:
+		cout << "yellow";
+		break;
+	case 3:
+		cout << "white";
+		break;
+	case 4:
+		cout << "dark";
+		break;
+	}
+	cout << ' ';
+	// Animal
+	switch (animal)
+	{
+	case 0:
+		cout << "rat";
+		break;
+	case 1:
+		cout << "cow";
+		break;
+	case 2:
+		cout << "tiger";
+		break;
+	case 3:
+		cout << "rabbit";
+		break;
+	case 4:
+		cout << "dragon";
+		break;
+	case 5:
+		cout << "snake";
+		break;
+	case 6:
+		cout << "horse";
+		break;
+	case 7:
+		cout << "sheep";
+		break;
+	case 8:
+		cout << "monkey";
+		break;
+	case 9:
+		cout << "chicken";
+		break;
+	case 10:
+		cout << "dog";
+		break;
+	case 11:
+		cout << "pig";
+		break;
+	}
+	cout << "'s year";
 }
 
-void task_20()
+bool task_20_between_dates(int lowerDay, int lowerMonth, int currentDay, int currentMonth, int higherDay, int higherMonth)
 {
+	int lower = lowerDay + lowerMonth * 30;
+	int higher = higherDay + higherMonth * 30;
+	int current = currentDay + currentMonth * 30;
+	return lower <= current && current <= higher;
+}
+void task_20(int day, int month)
+{
+	int number;
+	if (task_20_between_dates(20, 1, day, month, 18, 2))
+		number = 1;
+	else if (task_20_between_dates(19, 2, day, month, 20, 3))
+		number = 2;
+	else if (task_20_between_dates(21, 3, day, month, 19, 4))
+		number = 3;
+	else if (task_20_between_dates(20, 4, day, month, 20, 5))
+		number = 4;
+	else if (task_20_between_dates(21, 5, day, month, 21, 6))
+		number = 5;
+	else if (task_20_between_dates(22, 6, day, month, 22, 7))
+		number = 6;
+	else if (task_20_between_dates(23, 7, day, month, 22, 8))
+		number = 7;
+	else if (task_20_between_dates(23, 8, day, month, 22, 9))
+		number = 8;
+	else if (task_20_between_dates(23, 9, day, month, 22, 10))
+		number = 9;
+	else if (task_20_between_dates(23, 10, day, month, 22, 11))
+		number = 10;
+	else if (task_20_between_dates(23, 11, day, month, 21, 12))
+		number = 11;
+	else
+		number = 12;
+
+	switch (number)
+	{
+	case 1:
+		cout << "Aquarius";
+		break;
+	case 2:
+		cout << "Pisces";
+		break;
+	case 3:
+		cout << "Aries";
+		break;
+	case 4:
+		cout << "Taurus";
+		break;
+	case 5:
+		cout << "Gemini";
+		break;
+	case 6:
+		cout << "Cancer";
+		break;
+	case 7:
+		cout << "Lion";
+		break;
+	case 8:
+		cout << "Virgo";
+		break;
+	case 9:
+		cout << "Libra";
+		break;
+	case 10:
+		cout << "Scorpio";
+		break;
+	case 11:
+		cout << "Sagittarius";
+		break;
+	case 12:
+		cout << "Capricorn";
+		break;
+	}
 }
 } // namespace Case
