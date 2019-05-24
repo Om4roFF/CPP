@@ -26,6 +26,14 @@ Repository created only for showing Algorithms, Data Structures and problem solv
             </ul>
         </td>
     </tr>
+    <tr>
+        <td>24 of May, 2019</td>
+        <td>
+            <ul>
+                <li>Finished Case module for "Abramyan" book</li>
+            </ul>
+        </td>
+    </tr>
 </table>
 
 ## Authors
