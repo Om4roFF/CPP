@@ -8,6 +8,7 @@
     Module For
 */
 #include <iostream>
+#include <ctime>
 
 namespace For
 {
@@ -40,7 +41,35 @@ void task_4(int price)
 }
 void task_5(int price)
 {
-    for (float i = 0.1; i <= 1; cout << i * price << endl, i += 0.1)
+    for (float i = 0.1; i <= 1.1; cout << i * price << endl, i += 0.1)
         ;
 }
+void task_6(int price)
+{
+    for (float i = 1.2; i <= 2.2; cout << i * price << endl, i += 0.2)
+        ;
+}
+void task_7(int a, int b)
+{
+    int sum = 0;
+    for (size_t i = a; i <= b; sum += i, i++)
+        ;
+    cout << sum;
+}
+void task_8(int a, int b)
+{
+    int result = 1;
+    for (size_t i = a; i <= b; result *= i, i++)
+        ;
+    cout << result;
+}
+void task_9(int a, int b)
+{
+    int result = 1;
+    for (size_t i = a; i <= b; result += pow(i, 2), i++)
+        ;
+    cout << result;
+}
+
+
 } // namespace For
