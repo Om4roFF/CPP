@@ -4,37 +4,34 @@ C++ knowledge and skills presentation
 ## Description
 Solution different problems/tasks/cases here, using c++.
 Repository is divided in different folders due to it's problem type.
+### Problems/Abramyan
+Solutions for Abramyan's book problems (version 4.5).
+**Note**, solutions are divided by modules into different header files starting with:
+```C++
+#pragma once
+
+/*
+    Author RayDarar
+
+    Solutions for Abramyan 4.5
+
+    Module 'Module-Name'
+*/
+
+namespace 'Module-Name'
+{
+    // Solutions, ex.: task_1, task_2 etc.
+}
+```
+Currently solved modules:
+* Begin
+* Integer
+* Boolean
+* If
+* Case
 
 ## Usage
 Repository created only for showing Algorithms, Data Structures and problem solving skills. However, I'm open for sharing code with others.
-
-## Changelog
-<table>
-    <tr>
-        <td>Date</td>
-        <td>Changes</td>
-    </tr>
-    <tr>
-        <td>19 of May, 2019</td>
-        <td>
-            <ul>
-                <li>Creating repository</li>
-                <li>Adding "Problems" folder</li>
-                <li>Adding "Algorithms" folder</li>
-                <li>Adding "Data structures" folder</li>
-                <li>Adding solutions for "Abramyan" book to Problems folder</li>
-            </ul>
-        </td>
-    </tr>
-    <tr>
-        <td>24 of May, 2019</td>
-        <td>
-            <ul>
-                <li>Finished Case module for "Abramyan" book</li>
-            </ul>
-        </td>
-    </tr>
-</table>
 
 ## Authors
 @RayDarar - Ryspekov Ansar
