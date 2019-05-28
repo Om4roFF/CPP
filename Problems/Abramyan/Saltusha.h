@@ -17,8 +17,8 @@ public:
         this->name = name;
     }
 
-    void print()
-    {
-        cout << age << " | " << name;
-    }
+    // void print()
+    // {
+    //     cout << age << " | " << name;
+    // }
 };
