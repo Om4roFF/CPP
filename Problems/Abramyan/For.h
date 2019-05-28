@@ -141,15 +141,79 @@ void task_19(int n)
         ;
     cout << result;
 }
-long fact(int n)
+long fact(unsigned n)
 {
-    return n == 1 ? 1 : n * fact(n - 1);
+    if (n == 1 || n == 0)
+        return 1;
+    return n * fact(n - 1);
 }
 void task_20(int n)
 {
-    double result = 1;
+    double result = 0;
     for (unsigned i = 1; i <= n; result += fact(i), i++)
         ;
     cout << result;
+}
+void task_21(int n)
+{
+    double result = 0;
+    for (unsigned i = 0; i <= n; result += 1.0 / fact(i), i++)
+        ;
+    cout << result;
+}
+void task_22(int x, int n)
+{
+    double result = 0;
+    for (unsigned i = 0; i <= n; result += pow(x, i) / fact(i), i++)
+        ;
+    cout << result;
+}
+void task_23(int x, int n)
+{
+    double result = 0;
+    int sign = 1;
+    for (unsigned i = 0; i <= n; result += sign * pow(x, 2 * i + 1) / fact(2 * i + 1), sign *= -1, i++)
+        ;
+    cout << result;
+}
+void task_24(int x, int n)
+{
+    double result = 0;
+    int sign = 1;
+    for (unsigned i = 0; i <= n; result += sign * pow(x, 2 * i) / fact(2 * i), sign *= -1, i++)
+        ;
+    cout << result;
+}
+void task_25(int x, int n)
+{
+    double result = 0;
+    int sign = 1;
+    for (unsigned i = 1; i <= n; result += sign * pow(x, i) / i, sign *= -1, i++)
+        ;
+    cout << result;
+}
+void task_26(int x, int n)
+{
+    double result = 0;
+    int sign = 1;
+    for (unsigned i = 1; i <= n; result += sign * pow(x, 2 * i + 1) / (2 * i + 1), sign *= -1, i++)
+        ;
+    cout << result;
+}
+// Do
+long odd_negative_sequence(int n, int i = 0)
+{
+    if (n <= 1)
+        return 1;
+    return n * odd_negative_sequence(2 * n - 1);
+}
+long odd_positive_sequence(int n)
+{
+    if (n <= 1)
+        return 1;
+    return n * odd_positive_sequence(2 * n + 1);
+}
+void task_27(int x, int n)
+{
 }
 } // namespace For
