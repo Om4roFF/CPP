@@ -200,20 +200,28 @@ void task_26(int x, int n)
         ;
     cout << result;
 }
-// Do
-long odd_negative_sequence(int n, int i = 0)
+long negative_sequence_27(int n, int i = 1, int result = 1)
 {
-    if (n <= 1)
+    if (i == n + 1)
         return 1;
-    return n * odd_negative_sequence(2 * n - 1);
+    return i * negative_sequence_27(n, ++i, result * (2 * i - 1));
 }
-long odd_positive_sequence(int n)
+long positive_sequence_27(int n, int i = 1, int result = 1)
 {
-    if (n <= 1)
-        return 1;
-    return n * odd_positive_sequence(2 * n + 1);
+    if (i == n + 1)
+        return 2 * n + 1;
+    return i * positive_sequence_27(n, ++i, result * (2 * i));
 }
 void task_27(int x, int n)
 {
+    double result = 0;
+    for (unsigned i = 1; i <= n; result += negative_sequence_27(i) * pow(x, 2 * i + 1) / positive_sequence_27(i), i++)
+        ;
+    cout << result;
+}
+
+void task_28(int x, int n)
+{
+
 }
 } // namespace For
