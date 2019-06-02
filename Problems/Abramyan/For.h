@@ -184,7 +184,7 @@ void task_24(int x, int n)
         ;
     cout << result;
 }
-void task_25(int x, int n)
+void task_25(float x, int n)
 {
     double result = 0;
     int sign = 1;
@@ -192,7 +192,7 @@ void task_25(int x, int n)
         ;
     cout << result;
 }
-void task_26(int x, int n)
+void task_26(float x, int n)
 {
     double result = 0;
     int sign = 1;
@@ -212,16 +212,61 @@ long positive_sequence_27(int n, int i = 1, int result = 1)
         return 2 * n + 1;
     return i * positive_sequence_27(n, ++i, result * (2 * i));
 }
-void task_27(int x, int n)
+void task_27(float x, int n)
 {
     double result = 0;
     for (unsigned i = 1; i <= n; result += negative_sequence_27(i) * pow(x, 2 * i + 1) / positive_sequence_27(i), i++)
         ;
     cout << result;
 }
-
-void task_28(int x, int n)
+long odd_sequence_28(int n)
 {
-
+    long result = 1;
+    for (unsigned i = 1; i < 2 * n - 1; result *= i, i += 2)
+        ;
+    return result;
+}
+long even_sequence_28(int n)
+{
+    long result = 1;
+    for (unsigned i = 2; i <= 2 * n; result *= i, i += 2)
+        ;
+    return result;
+}
+void task_28(float x, int n)
+{
+    double result = 1;
+    int sign = 1;
+    for (unsigned i = 1; i <= n; result += sign * odd_sequence_28(i) * pow(x, i) / even_sequence_28(i), sign *= -1, i++)
+        ;
+    cout << result;
+}
+void task_29(int n, float a, float b)
+{
+    float h = abs(a - b) / n;
+    cout << h << endl;
+    for (unsigned i = 0; i <= n; cout << a + i * h << ' ', i++)
+        ;
+}
+long function_30(float x)
+{
+    return 1 - sin(x);
+}
+void task_30(int n, float a, float b)
+{
+    float h = abs(a - b) / n;
+    cout << h << endl;
+    for (unsigned i = 0; i <= n; cout << function_30(a + i * h) << ' ', i++)
+        ;
+}
+void task_31(int n)
+{
+    double item = 1;
+    for (unsigned k = 1; k <= n; item = (item + 1) / k, cout << item << ' ', k++)
+        ;
+}
+void task_32(int n)
+{
+    
 }
 } // namespace For
