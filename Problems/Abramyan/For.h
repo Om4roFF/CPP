@@ -261,12 +261,14 @@ void task_30(int n, float a, float b)
 }
 void task_31(int n)
 {
-    double item = 1;
-    for (unsigned k = 1; k <= n; item = (item + 1) / k, cout << item << ' ', k++)
+    double item = 2;
+    for (unsigned k = 1; k <= n; item = 2 + 1 / item, cout << item << ' ', k++)
         ;
 }
 void task_32(int n)
 {
-    
+    double item = 1;
+    for (unsigned k = 1; k <= n; item = (item + 1) / k, cout << item << ' ', k++)
+        ;
 }
 } // namespace For
