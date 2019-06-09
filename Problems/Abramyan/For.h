@@ -271,4 +271,40 @@ void task_32(int n)
     for (unsigned k = 1; k <= n; item = (item + 1) / k, cout << item << ' ', k++)
         ;
 }
+void task_33(int n)
+{
+    long item_1 = 1, item_2 = 1;
+    cout << 1 << ' ' << 1 << ' ';
+    for (int i = 0; i < n - 2; i++)
+    {
+        long temp = item_1;
+        item_1 = item_1 + item_2;
+        item_2 = temp;
+        cout << item_1 << ' ';
+    }
+}
+void task_34(int n)
+{
+    double item_1 = 2, item_2 = 1;
+    cout << 1 << ' ' << 2 << ' ';
+    for (int i = 0; i < n - 2; i++)
+    {
+        double temp = item_1;
+        item_1 = (item_1 + 2 * item_2) / 3;
+        item_2 = temp;
+        cout << item_1 << ' ';
+    }
+}
+void task_35(int n)
+{
+    long item_1 = 1, item_2 = 2, item_3 = 1;
+    cout << 1 << ' ' << 2 << ' ' << 3 << ' ';
+    for (int i = 0; i < n - 2; i++)
+    {
+        long temp = item_1;
+        item_1 = item_1 + item_2;
+        item_2 = temp;
+        cout << item_1 << ' ';
+    }
+}
 } // namespace For
