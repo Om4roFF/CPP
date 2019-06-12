@@ -307,4 +307,58 @@ void task_35(int n)
         cout << item_1 << ' ';
     }
 }
+void task_36(int n, int k)
+{
+    long result = 0;
+    for (unsigned i = 1; i <= n; i++)
+    {
+        int power = i;
+        for (unsigned j = 1; j < k; power *= i, j++)
+            ;
+        result += power;
+    }
+    cout << result;
+}
+void task_37(int n)
+{
+    long result = 0;
+    for (unsigned i = 1; i <= n; i++)
+    {
+        int power = i;
+        for (unsigned j = 1; j < i; power *= i, j++)
+            ;
+        result += power;
+    }
+    cout << result;
+}
+void task_38(int n)
+{
+    long result = 0;
+    for (unsigned i = 1; i <= n; i++)
+    {
+        int power = i;
+        for (unsigned j = 1; j < n - i + 1; power *= i, j++)
+            ;
+        result += power;
+    }
+    cout << result;
+}
+void task_39(int a, int b)
+{
+    for (unsigned i = a; i <= b; i++)
+    {
+        for (unsigned j = 0; j < i; j++)
+            cout << i << ' ';
+        cout << endl;
+    }
+}
+void task_40(int a, int b)
+{
+    for (unsigned i = a, counter = 1; i <= b; i++, counter++)
+    {
+        for (unsigned j = 0; j < counter; j++)
+            cout << i << ' ';
+        cout << endl;
+    }
+}
 } // namespace For
