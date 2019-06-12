@@ -4,6 +4,7 @@ C++ knowledge and skills presentation
 ## Description
 Solution different problems/tasks/cases here, using c++.
 Repository is divided in different folders due to it's problem type.
+
 ### Problems/Abramyan
 Solutions for Abramyan's book problems (version 4.5).
 **Note**, solutions are divided by modules into different header files starting with:
@@ -29,6 +30,7 @@ Currently solved modules:
 * Boolean
 * If
 * Case
+* For
 
 ## Usage
 Repository created only for showing Algorithms, Data Structures and problem solving skills. However, I'm open for sharing code with others.
