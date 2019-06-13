@@ -67,10 +67,39 @@ void task_5(int n)
 void task_6(int n)
 {
     long result = n;
-    while (n > 2) {
+    while (n > 2)
+    {
         n -= 2;
         result *= n;
     }
     cout << result;
+}
+void task_7(int n)
+{
+    int k = 2;
+    while (pow(k, 2) < n)
+        k++;
+    cout << k;
+}
+void task_8(int n)
+{
+    int k = 2;
+    while (pow(k, 2) <= n)
+        k++;
+    cout << k - 1;
+}
+void task_9(int n)
+{
+    int k = 1;
+    while (pow(3, k) > n)
+        k++;
+    cout << k;
+}
+void task_10(int n)
+{
+    int k = 1;
+    while (pow(3, k) > n)
+        k++;
+    cout << k - 1;
 }
 } // namespace While
