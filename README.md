@@ -31,6 +31,7 @@ Currently solved modules:
 * If
 * Case
 * For
+* While
 
 ## Usage
 Repository created only for showing Algorithms, Data Structures and problem solving skills. However, I'm open for sharing code with others.
