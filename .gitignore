@@ -2,6 +2,7 @@
 .vscode
 
 # Testing files
-Problems/main.cpp
-Problems/main.exe
-Problems/main.obj
+Problems/main.*
+
+# Books
+Problems/Abramyan/*.pdf
