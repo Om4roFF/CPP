@@ -6,3 +6,7 @@ Problems/main.*
 
 # Books
 Problems/Abramyan/*.pdf
+
+# Object files
+*.exe
+*.obj
