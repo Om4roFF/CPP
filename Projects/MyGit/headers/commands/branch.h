@@ -9,11 +9,13 @@
 #include "../headers.h"
 #include <direct.h>
 #include <fstream>
+#include <filesystem>
+namespace fs = std::filesystem;
 
 namespace Branch
 {
 /**
- * Returning current working directory
+ * Return current working directory
  * 
  */
 std::string workingdir()
@@ -21,6 +23,40 @@ std::string workingdir()
     char buf[256];
     GetCurrentDirectoryA(256, buf);
     return std::string(buf) + '\\';
+}
+
+/**
+ * Remove all files in directory
+ * 
+ */
+void remove_all(const char *directory_path)
+{
+    fs::path path(directory_path);
+    fs::remove_all(path);
+    fs::create_directory(path);
+}
+
+/**
+ * Setting current branch
+ * 
+ */
+void set_current(char *branch_name)
+{
+    fstream repo;
+    repo.open(".mygit/current_branch.bin", ios::out);
+    repo << branch_name << endl;
+}
+/**
+ * Return current branch name
+ * 
+ */
+string get_current()
+{
+    fstream repo;
+    repo.open(".mygit/current_branch.bin", ios::in);
+    string result;
+    repo >> result;
+    return result;
 }
 
 /**
@@ -43,30 +79,49 @@ void add(string branch_name)
     }
     else // Copy from master
     {
-        
+        string root = ".mygit\\";
+
+        system(("Xcopy /E /I " + root + "master " + root + branch_name).c_str());
     }
 }
+
 /**
- * Setting current branch
+ * Listing all branches
  * 
  */
-void set_current(char *branch_name)
+void list()
 {
-    fstream repo;
-    repo.open(".mygit/current_branch.bin", ios::out);
-    repo << branch_name << endl;
+    cout << "Current branch: " << get_current() << endl
+         << endl;
 }
+
 /**
- * Return current branch name
+ * Branch command
  * 
  */
-string get_current()
+void branch(char *commands[], int size)
 {
-    fstream repo;
-    repo.open(".mygit/current_branch.bin", ios::in);
-    string result;
-    repo >> result;
-    return result;
+    if (strcmp(commands[2], "add") == 0) // Add new branch
+    {
+        if (size > 3)
+        {
+            add(commands[3]);
+            set_current(commands[3]);
+            cout << "Branch was successfully created" << endl;
+        }
+        else
+            cout << "No branch name, follow: 'mygit branch add [branch name]'" << endl;
+    }
+    else if (strcmp(commands[2], "switch") == 0) // Add new branch
+    {
+        if (size > 3)
+        {
+            set_current(commands[3]);
+            cout << "Switched to " << commands[3] << endl;
+        }
+        else
+            cout << "No branch name, follow: 'mygit branch switch [branch name]'" << endl;
+    }
 }
 } // namespace Branch
 

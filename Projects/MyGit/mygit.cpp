@@ -35,9 +35,10 @@
 #include "headers/commands/branch.h"
 #include "headers/commands/stage.h"
 
-#define version 0.4
+#define version 0.5
 #define program_name "MyGit"
 #define author "RayDarar"
+
 
 void main(int argc, char *argv[])
 {
@@ -54,10 +55,17 @@ void main(int argc, char *argv[])
             else
                 cout << "Repository already exists" << endl;
         }
-        else if (strcmp(argv[1], "commit") == 0) // Commit
+        else if (strcmp(argv[1], "branch") == 0) // branch
         {
             if (argc > 2)
-                Commit::commit(argv[2]);
+                Branch::branch(argv, argc);
+            else
+                Branch::list();
+        }
+        else if (strcmp(argv[1], "commit") == 0) // commit
+        {
+            if (argc > 2)
+                Commit::commit(argv);
             else
                 Commit::list();
         }

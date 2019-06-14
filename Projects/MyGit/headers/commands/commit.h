@@ -10,8 +10,6 @@
 
 #include "../headers.h"
 #include "branch.h"
-#include <filesystem>
-#include <fstream>
 
 namespace Commit
 {
@@ -19,7 +17,7 @@ namespace Commit
  * Commiting by saving everything from stage to the corresponding folder
  * 
  */
-void commit(string commit_name)
+void save(string commit_name)
 {
     commit_name = '"' + commit_name + '"';
     string root = ".mygit\\" + Branch::get_current();
@@ -29,6 +27,24 @@ void commit(string commit_name)
 
     // Copying from stage
     system(("xcopy " + (root + "\\stage ") + (root + "\\commit\\" + commit_name + "\\ /i")).c_str());
+
+    // Remove all files from stage
+    Branch::remove_all((root + "\\stage").c_str());
+
+    cout << "Commited to " << Branch::get_current() << endl;
+}
+
+/**
+ * Commit command
+ * 
+ */
+void commit(char *commands[])
+{
+    if (strcmp(commands[2], "back") == 0) // Go back to commit
+    {
+    }
+    else // Commit changes
+        save(commands[2]);
 }
 
 /**

@@ -25,7 +25,7 @@ bool init()
         Branch::add("master"); // Adding new branch
         Branch::set_current("master"); // Setting current branch
         Stage::add(); // Adding all the changes
-        Commit::commit("Initial commit"); // Commiting
+        Commit::save("Initial commit"); // Commiting
         return true;
     }
     return false;
