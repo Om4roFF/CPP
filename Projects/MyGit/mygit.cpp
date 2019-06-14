@@ -35,7 +35,7 @@
 #include "headers/commands/branch.h"
 #include "headers/commands/stage.h"
 
-#define version 0.3
+#define version 0.4
 #define program_name "MyGit"
 #define author "RayDarar"
 
@@ -58,7 +58,7 @@ void main(int argc, char *argv[])
         {
             if (argc > 2)
                 Commit::commit(argv[2]);
-            else 
+            else
                 Commit::list();
         }
         else if (strcmp(argv[1], "help") == 0) // help

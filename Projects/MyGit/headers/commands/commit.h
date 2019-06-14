@@ -21,12 +21,14 @@ namespace Commit
  */
 void commit(string commit_name)
 {
-    string root = Branch::workingdir() + ".mygit/" + Branch::get_current();
+    commit_name = '"' + commit_name + '"';
+    string root = ".mygit\\" + Branch::get_current();
 
-    // Copy
-    system(("copy " + (root + "/stage ") + (root + "/commit")).c_str());
+    // Creating commit folder
+    system(("mkdir " + (root + "\\commit\\" + commit_name)).c_str());
 
-    rename((root + "/stage").c_str(), (root + "/" + commit_name).c_str());
+    // Copying from stage
+    system(("xcopy " + (root + "\\stage ") + (root + "\\commit\\" + commit_name + "\\ /i")).c_str());
 }
 
 /**
