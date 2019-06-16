@@ -1,6 +1,13 @@
 # CPP
 C++ knowledge and skills presentation
 
+## Navigation
+* [Description](#Description)
+* [Problems/Abramyan](#Problems/Abramyan)
+* [Projects/MyGit](#Projects/MyGit)
+* [Usage](#Usage)
+* [License](License)
+
 ## Description
 Solution different problems/tasks/cases here, using c++.
 Repository is divided in different folders due to it's problem type.
@@ -31,7 +38,9 @@ Currently solved modules:
 * If
 * Case
 * For
-* While
+
+### Projects/MyGit
+My own version control system, see [MyGIt's README](Projects/README.md).
 
 ## Usage
 Repository created only for showing Algorithms, Data Structures and problem solving skills. However, I'm open for sharing code with others.

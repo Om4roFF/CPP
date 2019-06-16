@@ -15,10 +15,25 @@ namespace fs = std::filesystem;
 namespace Branch
 {
 /**
+ * Copying directory
+ * 
+ */
+void copy_directory(fs::path source, const char *folder_name)
+{
+    fs::path target_parent = ".mygit/branches/";
+    fs::path result = target_parent;
+    result.append(folder_name);
+    auto target = target_parent / source.filename();
+    fs::create_directories(target);
+    fs::copy(source, target, fs::copy_options::recursive);
+    fs::rename(target, result);
+}
+
+/**
  * Return current working directory
  * 
  */
-std::string workingdir()
+string workingdir()
 {
     char buf[256];
     GetCurrentDirectoryA(256, buf);
@@ -78,11 +93,7 @@ void add(string branch_name)
         mkdir(stage.c_str());
     }
     else // Copy from master
-    {
-        string root = ".mygit\\";
-
-        system(("Xcopy /E /I " + root + "master " + root + branch_name).c_str());
-    }
+        copy_directory(".mygit/master", branch_name.c_str());
 }
 
 /**
@@ -91,8 +102,7 @@ void add(string branch_name)
  */
 void list()
 {
-    cout << "Current branch: " << get_current() << endl
-         << endl;
+    cout << "Current branch: " << get_current() << endl;
 }
 
 /**
